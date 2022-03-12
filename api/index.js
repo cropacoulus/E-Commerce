@@ -9,6 +9,7 @@ const mongoose = require('mongoose')
 
 const userRoute = require('./routes/user')
 const authRoute = require('./routes/auth')
+const productRoute = require('./routes/product')
 
 // app.use(bodyParser.urlencoded({ limit: '10mb', extended: false }))
 app.use(express.json())
@@ -20,5 +21,6 @@ db.once('open', () => console.log('Connected Sucessfully'))
 
 app.use('/api/auth', authRoute)
 app.use('/api/users', userRoute)
+app.use('/api/products', productRoute)
 
 app.listen(process.env.PORT || 3000)
